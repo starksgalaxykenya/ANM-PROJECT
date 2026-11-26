@@ -1,0 +1,169 @@
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #0d0b1e;
+  color: #f4f0ff;
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+}
+
+.poster {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(160deg, #1b1442 0%, #3a1d6e 55%, #ff5e7e 130%);
+  border: 4px solid #ffd166;
+  border-radius: 16px;
+  padding: 32px 24px;
+}
+
+/* ---------- Hero ---------- */
+.hero { text-align: center; margin-bottom: 32px; }
+.tag { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: #ffd166; }
+h1 {
+  font-size: clamp(2.8rem, 12vw, 5rem);
+  line-height: 0.95;
+  margin: 8px 0;
+  color: #ffd166;
+  text-shadow: 4px 4px 0 #ff5e7e;
+}
+.subtitle { font-size: 1.1rem; margin: 8px 0; }
+.when { font-weight: bold; color: #ffd166; }
+
+h2 { color: #ffd166; font-size: 1.2rem; }
+
+/* ---------- Clickable cards ---------- */
+.card-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.info-card {
+  flex: 1 1 180px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  border: 2px solid #ffd166;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  font: inherit;
+  transition: transform 0.2s, background 0.2s;
+}
+.info-card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.16); }
+
+.card-title { display: block; font-weight: bold; font-size: 1.1rem; }
+
+/* Hidden by default; JavaScript adds the "open" class to show it */
+.card-detail {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.info-card.open .card-detail { display: block; }
+
+/* ---------- Form ---------- */
+.rsvp { margin-top: 32px; }
+
+form { display: flex; flex-direction: column; gap: 8px; }
+label { font-size: 0.9rem; margin-top: 6px; }
+
+input[type="text"], input[type="number"], select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+}
+input:focus, select:focus { outline: none; border-color: #ffd166; }
+
+.check { display: flex; align-items: center; gap: 8px; }
+
+.submit-btn {
+  margin-top: 14px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ffd166;
+  color: #1b1442;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.submit-btn:hover { background: #ff5e7e; color: #fff; }
+
+/* ---------- VIP Drink Section ---------- */
+.vip-drink-section {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 209, 102, 0.12);
+  border-left: 6px solid #ffd166;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.vip-drink-section > label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffd166;
+  letter-spacing: 0.5px;
+}
+
+.drink-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: center;
+}
+
+.drink-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: normal;
+  color: #f4f0ff;
+  cursor: pointer;
+}
+
+.drink-options input[type="radio"] {
+  accent-color: #ffd166;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* ---------- Student ID Section ---------- */
+.student-id-section {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 209, 102, 0.12);
+  border-left: 6px solid #ffd166;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.student-id-section > label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffd166;
+  letter-spacing: 0.5px;
+}
+
+.student-id-section input[type="text"] {
+  width: 100%;
+  border: 2px solid #ffd166;
+}
+
+/* ---------- Response box ---------- */
+.message {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  display: none;
+  line-height: 1.6;
+}
+.message.success { display: block; background: rgba(80, 200, 120, 0.2); border: 2px solid #50c878; }
+.message.error { display: block; background: rgba(255, 94, 126, 0.25); border: 2px solid #ff5e7e; }

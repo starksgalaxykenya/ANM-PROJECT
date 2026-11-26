@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midnight Reels Film Night - RSVP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="poster">
+
+    <!-- HEADER: the "poster" part -->
+    <header class="hero">
+      <p class="tag">USIU-Africa Animation Club presents</p>
+      <h1>MIDNIGHT<br>REELS</h1>
+      <p class="subtitle">An open-air night of student animation shorts</p>
+      <p class="when">Friday, 5 December 2026 &bull; Auditorium &bull; Doors 6:30 PM</p>
+    </header>
+
+    <!-- INTERACTIVE CARDS: click to reveal hidden details -->
+    <section class="cards">
+      <h2>Tap a card for details</h2>
+      <div class="card-row">
+        <button class="info-card" type="button">
+          <span class="card-title">Showtimes</span>
+          <span class="card-detail">
+            7:00 PM - 2D Shorts<br>
+            8:00 PM - 3D Shorts<br>
+            9:00 PM - Q&amp;A with the makers
+          </span>
+        </button>
+
+        <button class="info-card" type="button">
+          <span class="card-title">Ticket Prices</span>
+          <span class="card-detail">
+            General - KES 500<br>
+            VIP - KES 1,500<br>
+            Student - KES 300
+          </span>
+        </button>
+
+        <button class="info-card" type="button">
+          <span class="card-title">Venue</span>
+          <span class="card-detail">
+            USIU-Africa Amphitheatre.<br>
+            Bring a jacket and a blanket.
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- REQUIRED COMPONENT: the RSVP webform -->
+    <section class="rsvp">
+      <h2>Reserve your seat</h2>
+      <form id="rsvpForm" novalidate>
+
+        <label for="visitorName">Your name</label>
+        <input type="text" id="visitorName" placeholder="e.g. Amina Otieno">
+
+        <label for="visitorEmail">Email</label>
+        <input type="text" id="visitorEmail" placeholder="you@example.com">
+
+        <label for="guestCount">Number of guests (1-10)</label>
+        <input type="number" id="guestCount" value="1">
+
+        <label for="ticketType">Ticket type</label>
+        <select id="ticketType">
+          <option value="">-- choose one --</option>
+          <option value="General">General</option>
+          <option value="VIP">VIP</option>
+          <option value="Student">Student</option>
+        </select>
+
+        <!-- VIP DRINK SECTION – hidden by default, shown only when VIP is selected -->
+        <div id="vipDrinkSection" class="vip-drink-section" style="display: none;">
+          <label>🍹 VIP drink preference</label>
+          <div class="drink-options">
+            <label>
+              <input type="radio" name="vipDrink" value="Soda"> Soda
+            </label>
+            <label>
+              <input type="radio" name="vipDrink" value="Juice"> Juice
+            </label>
+            <label>
+              <input type="radio" name="vipDrink" value="Water"> Water
+            </label>
+            <label>
+              <input type="radio" name="vipDrink" value="None" checked> None
+            </label>
+          </div>
+        </div>
+
+        <!-- STUDENT ID SECTION – hidden by default, shown only when Student is selected -->
+        <div id="studentIdSection" class="student-id-section" style="display: none;">
+          <label for="studentId">🎓 Student ID number</label>
+          <input type="text" id="studentId" placeholder="e.g. 123456">
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="wantsReminder">
+          Email me a reminder before the event
+        </label>
+
+        <button type="submit" class="submit-btn">RSVP</button>
+      </form>
+
+      <!-- The JavaScript writes the response into this box -->
+      <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
